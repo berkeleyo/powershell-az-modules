@@ -1,0 +1,9 @@
+{
+  "description": "PowerShell modules for Azure automation: tagging enforcement, budget setup, stale resource cleanup.",
+  "topics": [
+    "powershell",
+    "azure",
+    "automation"
+  ],
+  "created": "2025-10-15"
+}
