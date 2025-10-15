@@ -1,7 +1,16 @@
-# powershell-az-modules
 
-PowerShell modules for Azure automation: tagging enforcement, budget setup, stale resource cleanup.
+# PowerShell Modules for Azure Ops
 
-## Getting started
-- Clone and explore.
-- Use the CI workflows as examples.
+- `Set-RequiredTags`: merge & apply required tags to any Azure resource IDs
+- `New-SubBudget`: create a subscription budget with Azure CLI
+
+## Example
+```powershell
+Import-Module ./src/Tagging/Set-RequiredTags.psm1
+Import-Module ./src/Budget/New-SubBudget.psm1
+
+$ids = az group list --query "[].id" -o tsv
+Set-RequiredTags -ResourceIds $ids -Tags @{ Owner='Berkeley'; Environment='Prod' }
+
+New-SubBudget -SubscriptionId <subId> -Amount 500
+```
