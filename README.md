@@ -1,19 +1,16 @@
-﻿![CI](https://github.com/berkeleyo/powershell-az-modules/actions/workflows/powershell-ci.yml/badge.svg)
-![Dependabot](https://img.shields.io/badge/Dependabot-enabled-brightgreen)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+# PowerShell Az Modules — Reusable Building Blocks
+Modules that wrap Az cmdlets for idempotent operations and clear output.
 
-# powershell-az-modules
+## Install
+```powershell
+Import-Module ./Modules/Networking -Force
+```
 
-PowerShell modules for Azure automation: tagging enforcement, budget setup, stale resource cleanup.
+## Example
+```powershell
+New-BerkeleyAzPublicIp -Name "pip-prod" -ResourceGroup "rg-net" -Sku Standard -AllocationMethod Static
+```
 
-## Getting started
-- Clone and explore.
-- Use the CI workflows as examples.
-
-
----
-
-# PowerShell Az Modules
-
-Utility cmdlets for Azure scripting.
-
+## CI
+- PSScriptAnalyzer
+- Pester smoke tests
